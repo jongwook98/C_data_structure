@@ -9,7 +9,7 @@ st* init_stack(void);
 int exit_stack(st* s_name);
 int s_push(st* s_name, int data);
 int s_pop(st* s_name);
-int is_empty(st* s_name);
+int is_empty_stack(st* s_name);
 int print_list_all(st* s_name);
 int search_data(st* s_name, int data);
 
@@ -48,7 +48,7 @@ int s_push(st* s_name, int data) {
 }
 
 int s_pop(st* s_name) {
-	if (is_empty(s_name)) {
+	if (is_empty_stack(s_name)) {
 		printf("stack is empty ! \n");
 		return 0;
 	}
@@ -65,21 +65,21 @@ int s_pop(st* s_name) {
 	return pop_data;
 }
 
-int is_empty(st* s_name) {
+int is_empty_stack(st* s_name) {
 	if (s_name->node_ptr->next)
 		return 0;
 	else
 		return 1;
 }
-
+/*
 int main(void) {
 
 	st* int_stack1 = init_stack();
-	printf("%d \n", is_empty(int_stack1));
+	printf("%d \n", is_empty_stack(int_stack1));
 	s_pop(int_stack1);
 
 	s_push(int_stack1, 10);
-	printf("%d \n", is_empty(int_stack1));
+	printf("%d \n", is_empty_stack(int_stack1));
 	printf("%d \n", s_pop(int_stack1));
 
 	for (int i = 0; i < 10; i++) {
@@ -94,9 +94,9 @@ int main(void) {
 
 	print_list_all(int_stack1);
 
-	printf("%d \n", is_empty(int_stack1));
+	printf("%d \n", is_empty_stack(int_stack1));
 
-	//search_data(bottom, 6);
+	search_data(int_stack1, 5);
 
 	return 0;
 }
@@ -124,3 +124,4 @@ int search_data(st* s_name, int data) {
 	printf("not search %d data", data);
 	return 1;
 }
+*/
