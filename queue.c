@@ -71,7 +71,7 @@ int is_empty_queue(que* q_name) {
 	else
 		return 1;
 }
-
+/*
 int main(void) {
 
 	que* int_queue1 = init_queue();
@@ -124,3 +124,4 @@ int search_data(que* q_name, int data) {
 	printf("not search %d data", data);
 	return 1;
 }
+*/

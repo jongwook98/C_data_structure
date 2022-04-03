@@ -33,9 +33,11 @@ int exit_stack(st* s_name) {
 	}
 
 	Node* top = s_name->node_ptr;
+	Node* pre_top = s_name->node_ptr;
 	while (top->next) {
-
-		exit_node(top);
+		pre_top = top;
+		top = top->next;
+		exit_node(pre_top);
 	}
 	free(s_name);
 	return 0;
@@ -71,7 +73,7 @@ int is_empty_stack(st* s_name) {
 	else
 		return 1;
 }
-/*
+
 int main(void) {
 
 	st* int_stack1 = init_stack();
@@ -97,7 +99,7 @@ int main(void) {
 	printf("%d \n", is_empty_stack(int_stack1));
 
 	search_data(int_stack1, 5);
-
+	exit_stack(int_stack1);
 	return 0;
 }
 
@@ -124,4 +126,3 @@ int search_data(st* s_name, int data) {
 	printf("not search %d data", data);
 	return 1;
 }
-*/
